@@ -1,3 +1,4 @@
+
 import express from "express";
 import { GoogleGenAI } from "@google/genai";
 
@@ -17,6 +18,7 @@ app.post("/api/chat", async (req, res) => {
     });
     res.json({ reply: response.text });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "AI gagal menjawab. Coba lagi." });
   }
 });
@@ -27,4 +29,5 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", () => {
-  console.log(`AI PINTAR berjalan di
+  console.log(`AI PINTAR berjalan di port ${port}`);
+});
