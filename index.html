@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI PINTAR</title>
+</head>
+<body>
+<h1>AI PINTAR</h1>
+<p>Asisten AI pribadi Bagas</p>
+
+<input id="pertanyaan" placeholder="Tulis pertanyaan...">
+<button onclick="kirim()">Kirim</button>
+<p id="jawaban"></p>
+
+<script>
+async function kirim() {
+  const p = document.getElementById("pertanyaan").value;
+  const j = document.getElementById("jawaban");
+  j.textContent = "Sedang berpikir...";
+
+  try {
+    const r = await fetch("/api/chat", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({message: p})
+    });
+    const d = await r.json();
+    j.textContent = d.reply || d.error || "Belum ada jawaban.";
+  } catch {
+    j.textContent = "Server belum terhubung.";
+  }
+}
+</script>
+</body>
+</h
+  tml>
