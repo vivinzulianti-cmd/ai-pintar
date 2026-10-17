@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI PINTAR</title>
+</head>
+<body>
+<h1>AI PINTAR</h1>
+<p>Asisten AI pribadi Bagas</p>
+<input id="pertanyaan" placeholder="Tulis pertanyaan...">
+<button onclick="kirim()">Kirim</button>
+<div id="jawaban"></div>
+<script>
+function kirim(){
+let p=document.getElementById('pertanyaan').value;
+document.getElementById('jawaban').textContent=
+'Pertanyaan kamu: '+p;
+}
+</script>
+</body>
+</html>
