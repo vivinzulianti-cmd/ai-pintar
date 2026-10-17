@@ -1,6 +1,14 @@
-import express from "express";
-import { GoogleGenAI } from "@google/genai";
 
-const app = express();
-app.use(express.json());
-app.use(express.static("."));
+{
+  "name": "ai-pintar",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "express": "^4.21.2"
+  }
+
+}
